@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<title>Pension Plan Visualizations</title>
+
+<style>
+@import url(assets/css/style.css);
+@import url(assets/css/angular-slider.min.css);
+
+</style>
+</head>
+<body ng-app="pensionCalculator">
+<header>
+  <a href="http://availabs.org" rel="author">AVAILabs</a>
+  <aside>November 11, 2013</aside>
+</header>
+
+<h1>Pension Calculation Comparison</h1>
+<div ng-controller="pensionController">
+	<table>
+		<thead>
+			<tr>
+			    <td style="width:200px;text-align:left;">
+			        <p>Interest Rate: <input type="text" ng-model="interest_rate" style="border: 1px solid #fff;"></p>
+			        <slider floor="0" ceiling="20" step=".1" precision="2" ng-model="interest_rate" ></slider>
+			    </td>
+			    <td style="width:200px;text-align:left;">
+			        <p>Inflation Rate: <input type="text" ng-model="inflation_rate" style="border: 1px solid #fff;"></p>
+			        <slider floor="0" ceiling="20" step=".1" precision="2" ng-model="inflation_rate" ></slider>
+			    </td>
+			    <td style="width:200px;text-align:left;">
+			        <p>Salary Growth Rate: <input type="text" ng-model="salary_growth_rate" style="border: 1px solid #fff;"></p>
+			        <slider floor="0" ceiling="20" step=".1" precision="2" ng-model="salary_growth_rate" ></slider>
+			    </td>
+			   
+			</tr>
+		</thead>
+	</table>
+	<table>
+		<thead>
+			<tr>
+				<th colspan ="10"> Totals</th>
+			</tr>
+			<tr>
+				<th></th>
+				<th colspan="4">2000</th>
+				<th>
+				<th colspan="4">2010</th>
+			</tr>
+			<tr>
+				<th>Salary</th>
+				<th>PUC Normal Cost</th><th>PUC AAL</th><th>EAN Normal Cost</th><th>EAN AAL</th>
+				<th></th>
+				<th>PUC Normal Cost</th><th>PUC AAL</th><th>EAN Normal Cost</th><th>EAN AAL</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{salaryTotal}}</td>
+				<td>{{puc_normal_2000}} / {{puc_normal_2000_percent}}%</td>
+				<td>{{puc_aal_2000}} / {{puc_aal_2000_percent}}%</td>
+				<td>{{ean_normal_2000}} / {{ean_normal_2000_percent}}%</td>
+				<td>{{ean_aal_2000}} / {{ean_aal_2000_percent}}%</td>
+				<td>
+				<td>{{puc_normal_2010}} / {{puc_normal_2010_percent}}%</td>
+				<td>{{puc_aal_2010}} {{puc_aal_2010_percent}}% </td>
+				<td>{{ean_normal_2010}} / {{ean_normal_2010_percent}}%</td>
+				<td>{{ean_aal_2010}} / {{ean_aal_2010_percent}}%</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>Employees:<br>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="13" class="top"></th>
+				<th colspan="6" class="top">2000</th>
+				<th colspan="6" class="top">2010</th>
+			</tr>
+			<tr>
+				<th>ID</th>
+				<th>Age</th>
+				<th>Years of Service</th>
+				<th>Salary</th>
+				<th>Accumulated Salary</th>
+				<th>Future years before retirement</th>
+				<th>Survive to 65 (2000)</th>
+				<th>Survive to 65 (2010)</th>
+				<th>Accumulated Benefits</th>
+				<th>Benefit Rate</th>
+				<th>Discount Factor</th>
+				
+				<th>PUC annual_accrued_benefits</th>
+				<th>PUC accumulated annual accrued benefits</th>
+				
+				<th>Future Benefits 2000</th>
+				
+				<th>PUC Normal Cost (2000)</th>
+				<th>PUC accumulated accrued liabilities 2000</th>
+				<th>EAN Normal Cost(2000)</th>
+				<th>EAN AAL(2000)</th>
+				<th>Temporary Annuity 2000</th>
+
+				<th>Future Benefits 2010</th>
+				<th>PUC accumulated accrued liabilities 2010</th>
+				<th>PUC Normal Cost (2010)</th>
+				<th>EAN Normal Cost(2010)</th>
+				<th>EAN AAL(2010)</th>
+				<th>Temporary Annuity 2010</th>
+				
+			</tr>
+		<thead>
+		<tbody>
+			<tr ng-repeat="employee in employees">
+				<td>{{$index+1}}</td>
+				<td>{{employee.get_age()}}</td>
+				<td>{{employee.get_years_of_service()}}</td>
+				<td>{{employee.get_salary(3)}}</td>
+				<td>{{employee.get_accumulated_salary(3)}}</td>
+				<td>{{employee.get_years_to_retirement()}}</td>
+				<td>{{employee.get_survive_to65_2000()}}</td>
+				<td>{{employee.get_survive_to65_2010()}}</td>
+				<td>{{employee.get_accumulated_benefits()}}</td>
+				<td>{{employee.get_benefit_factor()}}</td>
+				<td>{{employee.get_discount_factor()}}</td>
+				<td>{{employee.get_puc_annual_accrued_benefits()}}</td>
+				<td>{{employee.get_puc_accumulated_annual_accrued_benefits()}}</td>
+
+				<td>{{employee.get_future_benefits_2000(2)}}</td>
+				<td>{{employee.get_puc_normal_cost_2000()}}</td>
+				<td>{{employee.get_puc_accumulated_accrued_liabilities_2000()}}</td>
+				<td>{{employee.get_ean_normal_cost_2000()}}</td>
+				<td>{{employee.get_ean_accumulated_accrued_liabilities_2000()}}</td>
+				<td>{{employee.get_temporary_annuity_2000()}}</td>
+
+				<td>{{employee.get_future_benefits_2010(2)}}</td>
+				<td>{{employee.get_puc_normal_cost_2010(4)}}</td>
+				<td>{{employee.get_puc_accumulated_accrued_liabilities_2010()}}</td>
+				<td>{{employee.get_ean_normal_cost_2010(4)}}</td>
+				<td>{{employee.get_ean_accumulated_accrued_liabilities_2010()}}</td>
+				<td>{{employee.get_temporary_annuity_2010()}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- Includes -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="assets/js/angular-slider.min.js"></script>
+
+<!-- src -->
+<script src="assets/src/pensionCalculator.js"></script>
+<script src="assets/js/controller.js"></script>
+</body>
+
+
+
+
