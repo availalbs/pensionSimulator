@@ -47,6 +47,8 @@ function pensionController($scope){
 	};
 
 	$scope.institution = [{'age':30,'yos':0},{'age':30,'yos':0},{'age':30,'yos':0},{'age':31,'yos':1},{'age':31,'yos':1},{'age':31,'yos':1},{'age':32,'yos':2},{'age':32,'yos':2},{'age':32,'yos':2},{'age':33,'yos':3},{'age':33,'yos':3},{'age':33,'yos':3},{'age':34,'yos':4},{'age':34,'yos':4},{'age':34,'yos':4},{'age':35,'yos':5},{'age':35,'yos':5},{'age':35,'yos':5},{'age':36,'yos':6},{'age':36,'yos':6},{'age':36,'yos':6},{'age':37,'yos':7},{'age':37,'yos':7},{'age':37,'yos':7},{'age':38,'yos':8},{'age':38,'yos':8},{'age':38,'yos':8},{'age':39,'yos':9},{'age':39,'yos':9},{'age':39,'yos':9},{'age':40,'yos':10},{'age':40,'yos':10},{'age':40,'yos':10},{'age':41,'yos':11},{'age':41,'yos':11},{'age':41,'yos':11},{'age':42,'yos':12},{'age':42,'yos':12},{'age':42,'yos':12},{'age':43,'yos':13},{'age':43,'yos':13},{'age':43,'yos':13},{'age':44,'yos':14},{'age':44,'yos':14},{'age':44,'yos':14},{'age':45,'yos':15},{'age':45,'yos':15},{'age':45,'yos':15},{'age':46,'yos':16},{'age':46,'yos':16},{'age':46,'yos':16},{'age':47,'yos':17},{'age':47,'yos':17},{'age':47,'yos':17},{'age':48,'yos':18},{'age':48,'yos':18},{'age':48,'yos':18},{'age':49,'yos':19},{'age':49,'yos':19},{'age':49,'yos':19},{'age':50,'yos':20},{'age':50,'yos':20},{'age':50,'yos':20},{'age':51,'yos':21},{'age':51,'yos':21},{'age':51,'yos':21},{'age':52,'yos':22},{'age':52,'yos':22},{'age':52,'yos':22},{'age':53,'yos':23},{'age':53,'yos':23},{'age':53,'yos':23},{'age':54,'yos':24},{'age':54,'yos':24},{'age':54,'yos':24},{'age':55,'yos':25},{'age':55,'yos':25},{'age':55,'yos':25},{'age':56,'yos':26},{'age':56,'yos':26},{'age':56,'yos':26},{'age':57,'yos':27},{'age':57,'yos':27},{'age':57,'yos':27},{'age':58,'yos':28},{'age':58,'yos':28},{'age':58,'yos':28},{'age':59,'yos':29},{'age':59,'yos':29},{'age':59,'yos':29},{'age':60,'yos':30},{'age':60,'yos':30},{'age':60,'yos':30},{'age':61,'yos':31},{'age':61,'yos':31},{'age':61,'yos':31},{'age':62,'yos':32},{'age':62,'yos':32},{'age':62,'yos':32},{'age':63,'yos':33},{'age':63,'yos':33},{'age':63,'yos':33},{'age':64,'yos':34},{'age':64,'yos':34},{'age':64,'yos':34},{'age':65,'yos':35},{'age':65,'yos':35},{'age':65,'yos':35}];
+	$scope.YoungInstitution = [{'age':30,'yos':0},{'age':30,'yos':0},{'age':30,'yos':0},{'age':31,'yos':1},{'age':31,'yos':1},{'age':31,'yos':1},{'age':32,'yos':2},{'age':32,'yos':2},{'age':32,'yos':2},{'age':33,'yos':3},{'age':33,'yos':3},{'age':33,'yos':3},{'age':34,'yos':4},{'age':34,'yos':4},{'age':34,'yos':4},{'age':35,'yos':5},{'age':35,'yos':5},{'age':35,'yos':5},{'age':36,'yos':6},{'age':36,'yos':6},{'age':36,'yos':6},{'age':37,'yos':7},{'age':37,'yos':7},{'age':37,'yos':7},{'age':38,'yos':8},{'age':38,'yos':8},{'age':38,'yos':8},{'age':39,'yos':9},{'age':39,'yos':9},{'age':39,'yos':9},{'age':40,'yos':10},{'age':40,'yos':10},{'age':40,'yos':10},{'age':41,'yos':11},{'age':41,'yos':11},{'age':41,'yos':11},{'age':42,'yos':12},{'age':42,'yos':12},{'age':42,'yos':12},{'age':43,'yos':13},{'age':43,'yos':13},{'age':43,'yos':13},{'age':44,'yos':14},{'age':44,'yos':14},{'age':44,'yos':14},{'age':45,'yos':15},{'age':45,'yos':15},{'age':45,'yos':15},{'age':46,'yos':16},{'age':46,'yos':16},{'age':46,'yos':16},{'age':47,'yos':17},{'age':47,'yos':17},{'age':47,'yos':17},{'age':48,'yos':18},{'age':48,'yos':18},{'age':48,'yos':18},{'age':49,'yos':19},{'age':49,'yos':19},{'age':49,'yos':19},{'age':50,'yos':20},{'age':50,'yos':20},{'age':50,'yos':20},{'age':51,'yos':21},{'age':51,'yos':21},{'age':51,'yos':21},{'age':53,'yos':23},{'age':53,'yos':23},{'age':54,'yos':24},{'age':54,'yos':24},{'age':54,'yos':24},{'age':55,'yos':25},{'age':55,'yos':25},{'age':56,'yos':26},{'age':56,'yos':26},{'age':57,'yos':27},{'age':57,'yos':27},{'age':57,'yos':27},{'age':58,'yos':28},{'age':59,'yos':29},{'age':59,'yos':29},{'age':59,'yos':29},{'age':60,'yos':30},{'age':60,'yos':30},{'age':60,'yos':30},{'age':61,'yos':31},,{'age':62,'yos':32},{'age':63,'yos':33},{'age':64,'yos':34},{'age':65,'yos':35},];
+	
 	pensionCalculator.init($scope.institution);
 	$scope.employees = pensionCalculator.employees();
 	$scope.salaryTotal=0;
@@ -59,12 +61,15 @@ function pensionController($scope){
 	$scope.ean_normal_2000=0;
 	$scope.ean_normal_2010=0;
 	$scope.calculateTotals();
-
+	$scope.salaryVis = pensionCalculator.get_salaries();
+	console.log($scope.salaryVis);
+	pensionCalculator.drawGraph(pensionCalculator.get_salaries());
 
 	$scope.interest_rate = pensionCalculator.interest_rate();
 	$scope.$watch('interest_rate',function(){
 		pensionCalculator.interest_rate($scope.interest_rate);
 		$scope.calculateTotals();
+
 	});
 
 	$scope.inflation_rate = pensionCalculator.inflation_rate();
@@ -77,6 +82,7 @@ function pensionController($scope){
 	$scope.$watch('salary_growth_rate',function(){
 		pensionCalculator.salary_growth_rate($scope.salary_growth_rate);
 		$scope.calculateTotals();
+		pensionCalculator.updateSalary(pensionCalculator.get_salaries());
 	});
 
 	$scope.base_benefit_factor = pensionCalculator.base_benefit_factor();
